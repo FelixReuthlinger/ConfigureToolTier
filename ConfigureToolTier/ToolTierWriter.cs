@@ -12,9 +12,7 @@ using YamlDotNet.Serialization.NamingConventions;
 namespace ConfigureToolTier {
     public static class ToolTierWriter {
         private static readonly string DefaultFileName = $"{ConfigureToolTierPlugin.PluginGuid}.defaults.yaml";
-
-        public static readonly string DefaultOutputFile =
-            $"{Paths.ConfigPath}{Path.DirectorySeparatorChar}{DefaultFileName}";
+        public static readonly string DefaultOutputFile = Path.Combine(Paths.ConfigPath, DefaultFileName);
 
         private const string CloneString = "(Clone)";
         private const string InvalidObjectRegex = @"\([0-9]+\)";
@@ -23,41 +21,41 @@ namespace ConfigureToolTier {
             Logger.LogInfo($"Writing YAML default contents to file '{file}'");
             var yamlContent = new SerializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance).Build()
-                .Serialize(GETAllNamesAndTiersGrouped());
+                .Serialize(GetAllNamesAndTiersGrouped());
             File.WriteAllText(file, yamlContent);
         }
 
-        private static Dictionary<string, Dictionary<string, int>> GETAllNamesAndTiersGrouped() {
+        private static Dictionary<string, Dictionary<string, int>> GetAllNamesAndTiersGrouped() {
             return new Dictionary<string, Dictionary<string, int>> {
-                [ConfigureToolTierPlugin.TreeBaseString] = GETAllTreeNames(),
-                [ConfigureToolTierPlugin.TreeLogString] = GETAllTreeLogNames(),
-                [ConfigureToolTierPlugin.MineRockString] = GETAllRockNames(),
-                [ConfigureToolTierPlugin.MineRock5String] = GETAllRock5Names()
+                [ConfigureToolTierPlugin.TreeBaseString] = GetAllTreeNames(),
+                [ConfigureToolTierPlugin.TreeLogString] = GetAllTreeLogNames(),
+                [ConfigureToolTierPlugin.MineRockString] = GetAllRockNames(),
+                [ConfigureToolTierPlugin.MineRock5String] = GetAllRock5Names()
             };
         }
 
-        private static Dictionary<string, int> GETAllTreeNames() {
+        private static Dictionary<string, int> GetAllTreeNames() {
             return PrefabManager.Cache.GetPrefabs(typeof(TreeBase))
                 .Where(pair => !pair.Key.Contains(CloneString))
                 .Where(pair => !Regex.IsMatch(pair.Key, InvalidObjectRegex))
                 .ToDictionary(pair => pair.Key, pair => ((TreeBase) pair.Value).m_minToolTier);
         }
 
-        private static Dictionary<string, int> GETAllTreeLogNames() {
+        private static Dictionary<string, int> GetAllTreeLogNames() {
             return PrefabManager.Cache.GetPrefabs(typeof(TreeLog))
                 .Where(pair => !pair.Key.Contains(CloneString))
                 .Where(pair => !Regex.IsMatch(pair.Key, InvalidObjectRegex))
                 .ToDictionary(pair => pair.Key, pair => ((TreeLog) pair.Value).m_minToolTier);
         }
 
-        private static Dictionary<string, int> GETAllRockNames() {
+        private static Dictionary<string, int> GetAllRockNames() {
             return PrefabManager.Cache.GetPrefabs(typeof(MineRock))
                 .Where(pair => !pair.Key.Contains(CloneString))
                 .Where(pair => !Regex.IsMatch(pair.Key, InvalidObjectRegex))
                 .ToDictionary(pair => pair.Key, pair => ((MineRock) pair.Value).m_minToolTier);
         }
 
-        private static Dictionary<string, int> GETAllRock5Names() {
+        private static Dictionary<string, int> GetAllRock5Names() {
             return PrefabManager.Cache.GetPrefabs(typeof(MineRock5))
                 .Where(pair => !pair.Key.Contains(CloneString))
                 .Where(pair => !Regex.IsMatch(pair.Key, InvalidObjectRegex))
