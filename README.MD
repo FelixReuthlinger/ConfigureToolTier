@@ -2,7 +2,7 @@
 
 Valheim mod to let you configure the tool tier required to harvest wood or stone.
 
-For more details see [README](ConfigureToolTier/README.md).
+For more details see [README](ConfigureToolTier).
 
 ## Building requires
 
