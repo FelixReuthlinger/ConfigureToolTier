@@ -65,6 +65,7 @@ tool like:
 ```
 TreeBase:
   PineTree: 0
+  YggaShoot1: 4
   Beech1: 0
   Birch2: 2
   Oak1: 2
@@ -74,9 +75,12 @@ TreeBase:
   Pinetree_01: 0
   FirTree: 0
   SwampTree1: 2
+  YggaShoot3: 4
+  YggaShoot2: 4
 TreeLog:
   Oak_log: 2
   PineTree_log: 0
+  yggashoot_log: 4
   SwampTree1_log: 0
   Birch_log: 2
   FirTree_log: 0
@@ -85,7 +89,9 @@ TreeLog:
   Oak_log_half: 2
   FirTree_log_half: 0
   PineTree_log_half: 0
+  yggashoot_log_half: 4
   beech_log_half: 0
+  caverock_ice_stalagtite_falling: 0
   Birch_log_half: 2
   PineTree_log_halfOLD: 0
 MineRock:
@@ -101,24 +107,36 @@ MineRock5:
   Rock_3_frac: 0
   widestone_frac: 0
   highstone_frac: 0
+  giant_brain_frac: 3
   rock4_coast_frac: 0
+  giant_helmet2_destruction: 3
   rock3_mountain_frac: 0
+  giant_sword1_destruction: 3
+  giant_sword2_destruction: 3
+  giant_helmet1_destruction: 3
   rock4_heath_frac: 0
   silvervein_frac: 2
   rock4_forest_frac: 0
   rock4_copper_frac: 0
   rock3_silver_frac: 2
+  giant_ribs_frac: 3
+  giant_skull_frac: 3
   tarlump1_frac: 0
   HeathRockPillar_frac: 0
   ice_rock1_frac: 0
+  cliff_mistlands1_frac: 0
+  cliff_mistlands1_creep_frac: 0
   rock1_mountain_frac: 0
   RockFinger_frac: 0
   RockFingerBroken_frac: 0
   RockThumb_frac: 0
+  rock_mistlands1_frac: 0
+  cliff_mistlands2_frac: 0
   rock2_heath_frac: 0
   rock2_mountain_frac: 0
   mudpile_frac: 0
   mudpile2_frac: 0
+  Ice_floor_fractured: 0
 ```
 
 ### Valheim tool tiers
@@ -133,6 +151,7 @@ MineRock5:
     * 0 -> Antler Pickaxe
     * 1 -> Bronze Pickaxe
     * 2 -> Iron Pickaxe
+    * 3 -> Black Metal Pickaxe
 
 ## Changelog
 

@@ -10,7 +10,7 @@ using ConfigureToolTier;
 [assembly: AssemblyConfiguration(ConfigureToolTierPlugin.PluginGuid)]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct(ConfigureToolTierPlugin.PluginName)]
-[assembly: AssemblyCopyright("Copyright © 2021")]
+[assembly: AssemblyCopyright("Copyright © 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
