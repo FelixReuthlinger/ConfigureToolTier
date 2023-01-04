@@ -1,10 +1,10 @@
 ﻿{
   "name": "ConfigureToolTier",
   "description": "Let's your re-configure which tool tier is required to harvest wood, stone and ores",
-  "version_number": "0.1.1",
+  "version_number": "0.1.2",
   "website_url": "https://github.com/FelixReuthlinger/ConfigureToolTier",
   "dependencies": [
-    "ValheimModding-Jotunn-2.4.1",
-    "denikson-BepInExPack_Valheim-5.4.1601"
+    "ValheimModding-Jotunn-2.10.2",
+    "denikson-BepInExPack_Valheim-5.4.1901"
   ]
 }

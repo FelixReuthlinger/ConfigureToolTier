@@ -21,7 +21,7 @@ namespace ConfigureToolTier {
         public const string MineRock5String = "MineRock5";
 
         private static readonly List<int> AxeRange = new List<int> {0, 1, 2, 3, 4};
-        private static readonly List<int> PickAxeRange = new List<int> {0, 1, 2};
+        private static readonly List<int> PickAxeRange = new List<int> {0, 1, 2, 3};
 
         private void Awake() {
             _config = ToolTierReader.ReadFromFile(ToolTierReader.DefaultInputFile);

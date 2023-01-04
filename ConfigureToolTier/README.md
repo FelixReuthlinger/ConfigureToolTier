@@ -136,6 +136,7 @@ MineRock5:
 
 ## Changelog
 
+* 0.1.2 -> updated for Mistlands patch
 * 0.1.1 -> readme fix (pickaxe tool tier levels)
 * 0.1.0 -> initial version
 
